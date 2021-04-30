@@ -2,7 +2,7 @@
 :: ES NECESARIO TENER INSTALADO NPM Y NODE EN NUESTRO TERMINAL ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// PASOS A SEGUIR - INSTRUCCIONES//
+// PASOS A SEGUIR - INSTRUCCIONES //
 
 1 - Ejecutar npm install
 2 - Renombrar el archivo .env.example a .env
@@ -24,9 +24,12 @@
      node fichar.js --plan=3              
      -> Media Jornada de 4 horas, sin Break
 
-  *    si se le añade el comando --nonstop=true fuerza a no hacer los breaks en los planes que lo contengan.
-  **   --break-hour solo admite numeros enteros, y es para indicar cuando realizar el break, pasadas X horas desde el inicio de la jornada
-  ***  --break-duration solo admite numeros enteros, y es para indicar la duración del break
+  * si se le añade el comando --nonstop=true fuerza a no hacer los breaks en los planes que lo contengan.
+  
+  ** --break-hour solo admite numeros enteros, indica cuando realizar el break, pasadas X horas del inicio de la jornada.
+  
+  *** --break-duration solo admite numeros enteros, y es para indicar la duración del break.
+  
   **** --test=true ejecuta una simulación del funcionamiento sin realizar la llamada al endpoint.
 
 
