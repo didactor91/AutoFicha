@@ -1,0 +1,21 @@
+{
+  "name": "ocean-autoficha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fichar.js",
+  "scripts": {
+    "default": "node fichar.js",
+    "uno": "node fichar.js --plan=1",
+    "dos": "node fichar.js --plan=2",
+    "tres": "node fichar.js --plan=3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "minimist": "^1.2.5",
+    "node-schedule": "^2.0.0"
+  }
+}
