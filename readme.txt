@@ -24,10 +24,10 @@
      node fichar.js --plan=3              
      -> Media Jornada de 4 horas, sin Break
 
-     *    si se le añade el comando --nonstop=true fuerza a no hacer los breaks en los planes que lo contengan.
-     **   --break-hour solo admite numeros enteros, y es para indicar cuando realizar el break, pasadas X horas desde el inicio de la jornada
-     ***  --break-duration solo admite numeros enteros, y es para indicar la duración del break
-     **** --test=true ejecuta una simulación del funcionamiento sin realizar la llamada al endpoint.
+  *    si se le añade el comando --nonstop=true fuerza a no hacer los breaks en los planes que lo contengan.
+  **   --break-hour solo admite numeros enteros, y es para indicar cuando realizar el break, pasadas X horas desde el inicio de la jornada
+  ***  --break-duration solo admite numeros enteros, y es para indicar la duración del break
+  **** --test=true ejecuta una simulación del funcionamiento sin realizar la llamada al endpoint.
 
 
 5 - Se muestran los horarios, y en cada fichaje, se notifica la acción y deberia aparecer un ID en la consola, es el ID del fichaje. 
