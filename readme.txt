@@ -10,7 +10,7 @@
 4 - En la consola, ubicados en la carpeta que contenga el archivo fichar.js ejecutar el comando:
 
         node fichar.js                       // Jornada 8 horas, con Break de 1 hora a las 4 horas de trabajo
-        node fichar.js --plan=0 --hours=     // Jornada custom, se puede pasar: --hours (obligatorio), --minutes(0 por defecto), --break-hour (a mitad jornada), --break-duration (1 por defecto).
+        node fichar.js --plan=0 --hours=     // Jornada custom, se puede pasar: --hours (obligatorio), --minutes, --break-hour, --break-duration.
         node fichar.js --plan=1              // Jornada 8,5 horas, con Break de 1 hora a las 4 horas de trabajo (ideal Lunes a Jueves)
         node fichar.js --plan=2              // Jornada 6 horas, sin Break (ideal Viernes)
         node fichar.js --plan=3              // Media Jornada de 4 horas, sin Break
