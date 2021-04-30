@@ -9,16 +9,25 @@
 3 - Introducir en las variables del .env el Token y la URL con el endpoint en el que realizar la llamada
 4 - En la consola, ubicados en la carpeta que contenga el archivo fichar.js ejecutar el comando:
 
-        node fichar.js                       // Jornada 8 horas, con Break de 1 hora a las 4 horas de trabajo
-        node fichar.js --plan=0 --hours=     // Jornada custom, se puede pasar: --hours (obligatorio), --minutes, --break-hour, --break-duration.
-        node fichar.js --plan=1              // Jornada 8,5 horas, con Break de 1 hora a las 4 horas de trabajo (ideal Lunes a Jueves)
-        node fichar.js --plan=2              // Jornada 6 horas, sin Break (ideal Viernes)
-        node fichar.js --plan=3              // Media Jornada de 4 horas, sin Break
+     node fichar.js                       
+     -> Jornada 8 horas, con Break de 1 hora a las 4 horas de trabajo
+        
+     node fichar.js --plan=0 --hours=     
+     -> Jornada custom, se puede pasar: --hours (obligatorio), --minutes, --break-hour, --break-duration.
+        
+     node fichar.js --plan=1              
+     -> Jornada 8,5 horas, con Break de 1 hora a las 4 horas de trabajo (ideal Lunes a Jueves)
+        
+     node fichar.js --plan=2              
+     -> Jornada 6 horas, sin Break (ideal Viernes)
+        
+     node fichar.js --plan=3              
+     -> Media Jornada de 4 horas, sin Break
 
-        *    si se le añade el comando --nonstop=true fuerza a no hacer los breaks en los planes que lo contengan.
-        **   --break-hour solo admite numeros enteros, y es para indicar cuando realizar el break, pasadas X horas desde el inicio de la jornada
-        ***  --break-duration solo admite numeros enteros, y es para indicar la duración del break
-        **** --test=true ejecuta una simulación del funcionamiento sin realizar la llamada al endpoint.
+     *    si se le añade el comando --nonstop=true fuerza a no hacer los breaks en los planes que lo contengan.
+     **   --break-hour solo admite numeros enteros, y es para indicar cuando realizar el break, pasadas X horas desde el inicio de la jornada
+     ***  --break-duration solo admite numeros enteros, y es para indicar la duración del break
+     **** --test=true ejecuta una simulación del funcionamiento sin realizar la llamada al endpoint.
 
 
 5 - Se muestran los horarios, y en cada fichaje, se notifica la acción y deberia aparecer un ID en la consola, es el ID del fichaje. 
@@ -27,6 +36,14 @@
 6 - No cerrar esa consola/terminal ya que el script se queda ejecutandose hasta finalizar la jornada, si se cierra, el script deja de ejecutarse.
 
 // FIN PASOS A SEGUIR - INSTRUCCIONES//
+
+// QUE URL TIENE EL ENDPOINT //
+
+Por lo general la url podría ser de este modo: https://ocean.yyyyyyyyy.xx/data/marcajes/realizar-manual
+
+Donde por regla general las yyyyyyyy son el nombre de la compañia, como podría ser "foo" y las xx el dominio como podria ser "bar"
+
+// FIN QUE URL TIENE EL ENDPOINT //
 
 // COMO ENCONTRAR EL TOKEN //
 
