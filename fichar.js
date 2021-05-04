@@ -6,8 +6,7 @@ dotenv.config();
 
 //
 
-const url = process.env.oceanAppUrl;
-const urlConsultarMarcaje = process.env.oceanUrlVerMarcaje;
+const url = process.env.oceanBaseUrl;
 const token = process.env.oceanAppToken;
 let entrada = args["entry"];
 let hr = args["hours"];
@@ -151,7 +150,7 @@ const fichar = async (forceInOut = false) => {
     }
 
     const response = await axios.post(
-      url+'/data/marcajes/realizar-manual',
+      url + "/data/marcajes/realizar-manual",
       {
         IncidenciaId: null,
         EsEntrada: entrada,
@@ -171,15 +170,13 @@ const fichar = async (forceInOut = false) => {
     const data = response.data;
     console.log(`ID MARCAJE: ${data.Ids}`);
     console.log("/_/-/_/-/_/-/_/-/_/");
-    if (urlConsultarMarcaje) {
-      const last = await consultar();
-      console.log(
-        `ULTIMO MARCAJE: ${new Date(
-          last.FechaHoraUltimoMarcaje
-        ).toLocaleString()}`
-      );
-      console.log("/_/-/_/-/_/-/_/-/_/");
-    }
+    const last = await consultar();
+    console.log(
+      `ULTIMO MARCAJE: ${new Date(
+        last.FechaHoraUltimoMarcaje
+      ).toLocaleString()}`
+    );
+    console.log("/_/-/_/-/_/-/_/-/_/");
   } catch (error) {
     console.log("ERROR::", error.message);
   }
@@ -187,7 +184,7 @@ const fichar = async (forceInOut = false) => {
 
 const consultar = async () => {
   try {
-    const response = await axios.get(url+'/data/marcajes/boton-a-mostrar', {
+    const response = await axios.get(url + "/data/marcajes/boton-a-mostrar", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
