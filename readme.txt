@@ -6,7 +6,7 @@
 
 1 - Ejecutar npm install
 2 - Renombrar el archivo .env.example a .env
-3 - Introducir en las variables del .env el Token y la URL con el endpoint en el que realizar la llamada
+3 - Introducir en las variables del .env el Token y la URL del dominio de la API (sustituir las xxxx y las yy).
 4 - En la consola, ubicados en la carpeta que contenga el archivo fichar.js ejecutar el comando:
 
      node fichar.js                       
@@ -50,7 +50,7 @@ Donde por regla general las yyyyyyyy son el nombre de la compañia, como podría
 
 // COMO ENCONTRAR EL TOKEN //
 
-** PARA ENCONTRAR EL TOKEN HAY QUE IR A https://ocean.mediapro.tv/#/marcajes , inspeccionar la página, en aplicación, local storage y buscar el oceanApp.token o en la consola del navegador introducir:
+** PARA ENCONTRAR EL TOKEN HAY QUE IR A https://ocean.xxxxxxx.yy/#/marcajes , inspeccionar la página, en aplicación, local storage y buscar el oceanApp.token o en la consola del navegador introducir:
 
         window.localStorage.getItem('oceanApp.token')
 

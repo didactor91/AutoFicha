@@ -7,6 +7,7 @@ dotenv.config();
 //
 
 const url = process.env.oceanAppUrl;
+const urlConsultarMarcaje = process.env.oceanUrlVerMarcaje;
 const token = process.env.oceanAppToken;
 let entrada = args["entry"];
 let hr = args["hours"];
@@ -121,16 +122,19 @@ console.log("/_/-/_/-/_/-/_/-/_/");
 if (!noBreak) {
   const startBreak = schedule.scheduleJob(startBreakDate, function () {
     console.log("STOP WORKING! START BREAK!", new Date().toLocaleString());
+    console.log("/_/-/_/-/_/-/_/-/_/");
     !localTest && fichar("out");
   });
   const stopBreak = schedule.scheduleJob(stopBreakDate, function () {
     console.log("STOP BREAK! START WORKING!", new Date().toLocaleString());
+    console.log("/_/-/_/-/_/-/_/-/_/");
     !localTest && fichar("in");
   });
 }
 
 const exitJob = schedule.scheduleJob(exitDate, function () {
   console.log("BYE, STOP WORKING!", new Date().toLocaleString());
+  console.log("/_/-/_/-/_/-/_/-/_/");
   !localTest && fichar("out");
 });
 
@@ -147,7 +151,7 @@ const fichar = async (forceInOut = false) => {
     }
 
     const response = await axios.post(
-      url,
+      url+'/data/marcajes/realizar-manual',
       {
         IncidenciaId: null,
         EsEntrada: entrada,
@@ -165,11 +169,36 @@ const fichar = async (forceInOut = false) => {
       }
     );
     const data = response.data;
-    console.log(data);
+    console.log(`ID MARCAJE: ${data.Ids}`);
+    console.log("/_/-/_/-/_/-/_/-/_/");
+    if (urlConsultarMarcaje) {
+      const last = await consultar();
+      console.log(
+        `ULTIMO MARCAJE: ${new Date(
+          last.FechaHoraUltimoMarcaje
+        ).toLocaleString()}`
+      );
+      console.log("/_/-/_/-/_/-/_/-/_/");
+    }
   } catch (error) {
-    console.log(error.message);
+    console.log("ERROR::", error.message);
+  }
+};
+
+const consultar = async () => {
+  try {
+    const response = await axios.get(url+'/data/marcajes/boton-a-mostrar', {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log("ERROR::", error.message);
   }
 };
 
 console.log("HELLO, START WORKING!", new Date().toLocaleString());
+console.log("/_/-/_/-/_/-/_/-/_/");
 !localTest && fichar();
