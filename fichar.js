@@ -174,7 +174,7 @@ const fichar = async (forceInOut = false) => {
     console.log(
       `ULTIMO MARCAJE: ${new Date(
         last.FechaHoraUltimoMarcaje
-      ).toLocaleString()}`
+      ).toLocaleString()} TIPO: ${last.Sentido == 'S' ? 'ENTRADA' : 'SALIDA'}`
     );
     console.log("/_/-/_/-/_/-/_/-/_/");
   } catch (error) {
